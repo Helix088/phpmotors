@@ -1,0 +1,226 @@
+/*
+colors:
+#bababa
+#38d8d8d
+#a6cbeb
+#4c96d7
+#3a3a3a
+#ffffff
+ */
+
+body {
+    font-size: 16px;
+    font-family: "Share Tech Mono", monospace;
+    margin: 0 auto;
+    max-width: 950px;
+}
+
+.account {
+    float: right;
+    padding-top: 1.5rem;
+    font-size: 1.2rem;
+    padding-right: 2rem;
+    text-decoration: none;
+}
+
+.account:hover,
+.account:active,
+.account:visited {
+    color: #000000;
+}
+
+nav {
+    background-color: #3a3a3a;
+    padding: 0.7rem;
+    word-spacing: 2rem;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a,
+nav a:active,
+nav a:visited {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-left: -2rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #4c96d7;
+    color: #3a3a3a;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.space {
+    background-color: #3a3a3a;
+    padding: 0.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* Home Page */
+
+h1 {
+    margin-left: 10px;
+}
+
+h2 {
+    margin-left: 10px;
+}
+
+.d-header,
+.details {
+    color: #4c96d7;
+}
+
+.d-header {
+    padding-bottom: 0.5rem;
+}
+
+.details {
+    font-size: 1.2rem;
+    list-style: none;
+    margin-top: -20px;
+    margin-left: -30px;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.delorean {
+    max-width: 100%;
+    margin-bottom: 3rem;
+}
+
+button {
+    background-color: #4c96d7;
+    border: solid 1px #3a3a3a;
+    color: #3a3a3a;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1.2rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.reviews-header,
+.upgrades-header {
+    font-size: 2rem;
+}
+
+.reviews {
+    line-height: 2.5rem;
+}
+
+.upgrades {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+}
+
+figure img {
+    background-color: #4c96d7;
+    height: 60px;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+figcaption {
+    background-color: #ffffff;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+/* Home Page */
+
+@media only screen and (min-width: 34rem) {
+    nav {
+        word-spacing: 3rem;
+    }
+    nav a {
+        font-size: 1.2rem;
+    }
+    nav a:hover {
+        padding: 2rem;
+    }
+    .upgrades {
+        align-items: center;
+    }
+    figure img {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+    }
+}
+
+@media only screen and (min-width: 60rem) {
+    html {
+        background-image: url("../images/site/checkerboard.jpg");
+        background-repeat: repeat;
+    }
+    body {
+        position: relative;
+        margin-top: 2rem;
+        border: solid 5px #4c96d7;
+        border-radius: 0.6rem;
+    }
+    .small-body {
+        background-color: #ffffff;
+    }
+    button {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+        float: left;
+        margin-top: -36rem;
+        margin-left: 10px;
+    }
+    .delorean {
+        margin-top: 2.9rem;
+    }
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 30% 1fr;
+        padding: 1rem;
+        padding-bottom: 5rem;
+    }
+    .upgrades-header {
+        margin-left: 2rem;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .upgrades {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .reviews-header {
+        margin-left: 1.2rem;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .reviews {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    figure img {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+}
