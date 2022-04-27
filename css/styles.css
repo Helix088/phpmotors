@@ -1,26 +1,42 @@
-/*
-colors:
-#bababa
-#38d8d8d
-#a6cbeb
-#4c96d7
-#3a3a3a
-#ffffff
- */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 
 body {
     font-size: 16px;
     font-family: "Share Tech Mono", monospace;
     margin: 0 auto;
-    max-width: 950px;
+    max-width: 1000px;
 }
 
-.account {
+.account,
+.account-name,
+.logout-link,
+.search {
     float: right;
     padding-top: 1.5rem;
-    font-size: 1.2rem;
     padding-right: 2rem;
     text-decoration: none;
+    color: #000000;
+}
+
+.account,
+.account-name {
+    order: 1;
+}
+
+.logout-link {
+    order: 2;
+}
+
+.search {
+    order: 3;
 }
 
 .account:hover,
@@ -29,33 +45,57 @@ body {
     color: #000000;
 }
 
+.account-name,
+.logout-link {
+    padding: 0.2rem;
+    padding-top: 1.5rem;
+}
+
+.account-name:hover,
+.account-name:active,
+.account-name:visited,
+.logout-link:hover,
+.logout-link:active,
+.logout-link:visited {
+    color: #000000;
+}
+
 nav {
     background-color: #3a3a3a;
-    padding: 0.7rem;
-    word-spacing: 2rem;
+    padding: 1rem;
+    margin-top: 0.75rem;
 }
 
 nav ul {
-    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    margin-left: -1rem;
 }
 
 nav li {
-    display: inline;
+    list-style: none;
+    margin: 0;
+    margin-left: -0.5rem;
+    font-size: 0.7em;
+    padding: 0;
+    text-align: center;
 }
 
 nav a,
 nav a:active,
 nav a:visited {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin-left: -2rem;
     text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: 4.5em;
+    padding: 0.25rem 0;
 }
 
 nav a:hover {
-    background-color: #4c96d7;
+    background-color: #fff;
     color: #3a3a3a;
-    padding: 1rem;
     font-weight: bold;
 }
 
@@ -114,6 +154,17 @@ button {
     display: block;
 }
 
+.own {
+    background-color: #4c96d7;
+    border: solid 1px #3a3a3a;
+    color: #3a3a3a;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1.2rem;
+    margin: 0 auto;
+    display: block;
+}
+
 .reviews-header,
 .upgrades-header {
     font-size: 2rem;
@@ -149,17 +200,325 @@ figcaption {
 }
 
 
-/* Home Page */
+/* Vehicle Pages */
+
+.mod-delete h2 {
+    margin-left: 0;
+}
+
+.mod-delete {
+    margin-left: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+
+/* Login and Registration Pages */
+
+.container {
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+input,
+label {
+    display: block;
+}
+
+input {
+    border: #666666 2px inset;
+}
+
+.signin,
+.register {
+    padding: 0.2rem;
+    border: #666666 2px outset;
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+}
+
+.notmember {
+    margin-left: 0.5rem;
+}
+
+.pass {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.thirty {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.show {
+    font-family: "Share Tech Mono", monospace;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 0.6rem;
+    margin-top: -0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 5%;
+}
+
+.center {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.empty,
+.message {
+    color: red;
+    margin-left: 0.5rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.notice,
+.thanks {
+    margin-left: 0.5rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* Admin Page */
+
+.loggedin,
+.logininfo {
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.logininfo li {
+    padding-bottom: 0.5rem;
+}
+
+.veh-man {
+    font-weight: bold;
+}
+
+.veh-man,
+.veh-link,
+.account-man,
+.account-link,
+.img-man,
+.img-link {
+    margin-left: 0.8rem;
+}
+
+
+/* Client Page */
+
+#upinfo,
+#uppass {
+    padding: 0.2rem;
+    border: #666666 2px outset;
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+}
+
+
+/* Vehicle Display Page */
+
+#inv-display {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+}
+
+#inv-display li {
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 2px #ccc solid;
+    border-radius: 5%;
+    list-style-type: none;
+    flex: 1 1 auto;
+}
+
+#inv-display li img {
+    max-width: 100%;
+    border-radius: 5%;
+}
+
+
+/* Vehicle Info Page */
+
+#vehicle-info {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#vehicle-thumb {
+    margin-left: 2rem;
+    list-style-type: none;
+}
+
+.thumb-head {
+    margin-left: -1rem;
+}
+
+#vehicle-pic {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+}
+
+#vehicle-info h2 {
+    margin-left: 0;
+}
+
+#vehicle-desc {
+    padding: 1rem;
+    font-weight: bold;
+}
+
+#price {
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.spacing {
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+
+/* Image Admin View */
+
+.choose {
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.veh-lab {
+    font-size: 1.3rem;
+}
+
+.image-veh {
+    border: none;
+}
+
+.pImage,
+.image-veh input {
+    display: inline;
+}
+
+.cfile {
+    border: none;
+}
+
+.regbtn {
+    background-color: #4c96d7;
+    border: solid 1px #3a3a3a;
+    color: #3a3a3a;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.7rem;
+    margin-left: 5px;
+    display: block;
+}
+
+#image-display {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#image-display li {
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 2px #ccc solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+}
+
+#image-display li img {
+    max-width: 200px;
+}
+
+
+/* Search Page */
+
+.look {
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.search-bar {
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid #3a3a3a;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.search-btn {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: #3a3a3a;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-bottom: 5rem;
+}
+
+.search-left {
+    margin-left: 3rem;
+}
+
+.mag-glass {
+    width: 20px;
+}
+
+#vehicle-search {
+    text-align: center;
+}
+
+.search-desc img {
+    padding: 2rem;
+}
+
+#vehicle-search h3 {
+    font-size: 1.5rem;
+}
+
+.result-message {
+    color: red;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* Different Screen Sizes */
 
 @media only screen and (min-width: 34rem) {
-    nav {
-        word-spacing: 3rem;
+    nav ul {
+        padding: 0 0 0 0.25rem;
+        justify-content: space-evenly;
+        max-width: 100%;
     }
-    nav a {
-        font-size: 1.2rem;
+    nav a,
+    nav a:active,
+    nav a:visited {
+        font-size: 1.2em;
     }
-    nav a:hover {
-        padding: 2rem;
+    nav li {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
     }
     .upgrades {
         align-items: center;
@@ -168,11 +527,124 @@ figcaption {
         padding-left: 4.5rem;
         padding-right: 4.5rem;
     }
+    .account {
+        font-size: 1.2rem;
+    }
+    .account-name,
+    .logout-link {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    /* For vehicle display in classification view */
+    #inv-display {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+    #inv-display h2 {
+        font-size: 1rem;
+    }
+    #inv-display li {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        flex: 1 0 auto;
+        text-align: center;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #inv-display div {
+        width: 100%;
+    }
+    /* For the vehicle information view */
+    .car-info {
+        display: inline-flex;
+    }
+    .thumb-head {
+        display: none;
+    }
+    #vehicle-thumb {
+        order: 1;
+    }
+    #vehicle-thumb img {
+        max-width: 150px;
+        transition: transform .2s;
+    }
+    #vehicle-thumb img:hover {
+        transform: scale(2);
+    }
+    #vehicle-info {
+        order: 2;
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-rows: 1.9fr 0.1fr;
+    }
+    #vehicle-pic {
+        padding: 1rem;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #vehicle-desc {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        padding: 1rem;
+    }
+    #vehicle-info h2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+    #price {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin-bottom: 2rem;
+    }
+    /* For image display in image admin page */
+    #image-display {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+    #image-display li {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        flex: 1 0 auto;
+        text-align: center;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #image-display div {
+        width: 100%;
+    }
+    #vehicle-search {
+        text-align: left;
+        display: block;
+    }
+    #vehicle-search h3,
+    .search-desc {
+        margin-left: 2rem;
+    }
+    .search-desc {
+        display: flex;
+    }
+    .search-desc img {
+        margin-right: 0;
+    }
+    #vehicle-search h3 {
+        font-size: 1.8rem;
+    }
+    .mag-glass {
+        margin-top: -0.5rem;
+        width: 25px;
+    }
 }
 
 @media only screen and (min-width: 60rem) {
     html {
-        background-image: url("../images/site/checkerboard.jpg");
+        background-image: url("/phpmotors/images/site/checkerboard.jpg");
         background-repeat: repeat;
     }
     body {
@@ -184,11 +656,16 @@ figcaption {
     .small-body {
         background-color: #ffffff;
     }
-    button {
+    nav {
+        padding: 0;
+    }
+    nav li {
+        font-size: 1.2rem;
+    }
+    .own {
         font-size: 1.2rem;
         padding: 0.8rem;
         float: left;
-        margin-top: -36rem;
         margin-left: 10px;
     }
     .delorean {
@@ -222,5 +699,8 @@ figcaption {
     figure img {
         padding-left: 3.5rem;
         padding-right: 3.5rem;
+    }
+    .search-left {
+        margin-left: 6.2rem;
     }
 }
